@@ -10,13 +10,13 @@ terraform {
 
 provider "aws" {
   region     = "us-west-2"
-  access_key = "*****"
-  secret_key = "*****"
+  access_key = var.access_key
+  secret_key = var.secret_key
 }
 
 /* ------- S3 Bucket ------ */
-resource "aws_s3_bucket" "group3-tf-cp2-bucket-create" {
-  bucket = "group3-tf-cp2-bucket"
+resource "aws_s3_bucket" "group3-capstone2" {
+  bucket = "group3-capstone2"
 }
 
 resource "aws_s3_bucket_versioning" "group3-tf-cp2-bucket-verison" {
@@ -64,7 +64,7 @@ resource "aws_s3_object" "group3-tf-cp2-bucket-add" {
 
 /* ------- ECR Repo ------ */
 resource "aws_ecr_repository" "group3-tf-cp2-ecr-repo" {
-  name = "group3-tf-cp2-ecr-repo"
+  name = "group3-capstone2"
 }
 
 
